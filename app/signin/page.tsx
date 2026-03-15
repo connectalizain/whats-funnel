@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import AuthPreview from "@/components/AuthPreview";
@@ -16,7 +17,7 @@ export default function SignInPage() {
         style={{ backgroundColor: "#f8fafc" }}
       >
         {/* Mobile logo */}
-        <a href="/" className="lg:hidden flex items-center gap-2 mb-10">
+        <Link href="/" className="lg:hidden flex items-center gap-2 mb-10">
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center"
             style={{ backgroundColor: "var(--brand)" }}
@@ -26,7 +27,7 @@ export default function SignInPage() {
           <span className="font-bold text-xl text-slate-900">
             Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
           </span>
-        </a>
+        </Link>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,21 +79,21 @@ export default function SignInPage() {
           {/* Terms */}
           <p className="text-center text-sm text-slate-500 mt-8">
             By signing in, you agree to our{" "}
-            <a href="/terms" className="hover:underline" style={{ color: "var(--brand)" }}>
+            <Link href="/terms" className="hover:underline" style={{ color: "var(--brand)" }}>
               Terms of Service
-            </a>{" "}
+            </Link>{" "}
             and{" "}
-            <a href="/privacy" className="hover:underline" style={{ color: "var(--brand)" }}>
+            <Link href="/privacy" className="hover:underline" style={{ color: "var(--brand)" }}>
               Privacy Policy
-            </a>
+            </Link>
           </p>
 
           {/* Sign up link */}
           <p className="text-center text-sm text-slate-600 mt-6">
             Don&apos;t have an account?{" "}
-            <a href="/signup" className="font-semibold hover:underline" style={{ color: "var(--brand)" }}>
+            <Link href="/signup" className="font-semibold hover:underline" style={{ color: "var(--brand)" }}>
               Sign up
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>

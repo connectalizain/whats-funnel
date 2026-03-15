@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, MessageCircle } from "lucide-react";
@@ -35,19 +36,19 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--brand)" }}>
             <MessageCircle className="w-4 h-4 text-black" />
           </div>
           <span className="font-bold text-lg tracking-tight" style={{ color: "var(--foreground)" }}>
             Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-sm font-medium transition-colors duration-200 hover:opacity-100"
@@ -56,13 +57,13 @@ export default function Navbar() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a
+          <Link
             href="/signin"
             className="text-sm font-medium transition-colors duration-200"
             style={{ color: "var(--foreground-muted)" }}
@@ -70,8 +71,8 @@ export default function Navbar() {
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
           >
             Sign in
-          </a>
-          <a
+          </Link>
+          <Link
             href="/signup"
             className="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg"
             style={{
@@ -87,7 +88,7 @@ export default function Navbar() {
             }}
           >
             Get Started Free
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -114,7 +115,7 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="text-sm font-medium py-1"
@@ -122,23 +123,24 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
+              <Link
                 href="/signin"
                 className="text-sm font-medium py-1"
                 style={{ color: "var(--foreground-muted)" }}
                 onClick={() => setMobileOpen(false)}
               >
                 Sign in
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/signup"
                 className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center"
                 style={{ backgroundColor: "var(--brand)", color: "#000" }}
+                onClick={() => setMobileOpen(false)}
               >
                 Get Started Free
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

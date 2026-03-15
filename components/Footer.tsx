@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
 const footerLinks = {
@@ -31,7 +32,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left shrink-0 max-w-xs">
-            <a href="/" className="inline-flex items-center gap-2 mb-3">
+            <Link href="/" className="inline-flex items-center gap-2 mb-3">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center"
                 style={{ backgroundColor: "var(--brand)" }}
@@ -41,7 +42,7 @@ export default function Footer() {
               <span className="font-bold text-lg" style={{ color: "var(--foreground)" }}>
                 Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
               The most powerful WhatsApp marketing platform built on the official Meta Business API.
             </p>
@@ -60,7 +61,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {links.map((link) => (
                     <li key={link.label}>
-                      <a
+                      <Link
                         href={link.href}
                         className="text-sm transition-colors duration-200"
                         style={{ color: "var(--foreground-muted)" }}
@@ -68,7 +69,7 @@ export default function Footer() {
                         onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

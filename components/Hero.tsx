@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, CheckCircle, Wifi, Shield, Zap } from "lucide-react";
@@ -128,7 +129,7 @@ function ConnectionCard() {
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 2.8, duration: 0.5, ease: "easeOut" }}
-      className="absolute -bottom-6 -left-6 z-20 rounded-xl px-4 py-3 border flex items-center gap-3"
+      className="absolute -bottom-6 -left-6 z-20 rounded-xl px-4 py-3 border hidden lg:flex items-center gap-3"
       style={{
         backgroundColor: "var(--surface-2)",
         borderColor: "rgba(34,197,94,0.3)",
@@ -359,7 +360,7 @@ export default function Hero() {
               variants={fadeUp}
               className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start"
             >
-              <a
+              <Link
                 href="/signup"
                 className="group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105"
                 style={{
@@ -376,7 +377,7 @@ export default function Hero() {
               >
                 Start Free — 14 Days
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
               <a
                 href="#"
                 className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-200 hover:scale-105"
@@ -428,13 +429,13 @@ export default function Hero() {
               icon={Shield}
               label="End-to-End Encrypted"
               delay={2.0}
-              className="-top-5 -right-4"
+              className="-top-5 -right-4 hidden lg:flex"
             />
             <FloatingBadge
               icon={Zap}
               label="99.9% Delivery Rate"
               delay={2.4}
-              className="top-20 -right-8 hidden sm:flex"
+              className="top-20 -right-8 hidden lg:flex"
             />
 
             {/* Phone shell — authentic WhatsApp look matching reference */}

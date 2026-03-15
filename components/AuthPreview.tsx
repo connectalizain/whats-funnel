@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MessageCircle, BarChart3, Bot, Sparkles, Users } from "lucide-react";
 
@@ -11,7 +12,7 @@ export default function AuthPreview() {
       style={{ backgroundColor: "var(--surface)" }}
     >
       {/* Logo */}
-      <a href="/" className="flex items-center gap-2">
+      <Link href="/" className="flex items-center gap-2">
         <div
           className="w-9 h-9 rounded-lg flex items-center justify-center"
           style={{ backgroundColor: "var(--brand)" }}
@@ -21,7 +22,7 @@ export default function AuthPreview() {
         <span className="font-bold text-xl" style={{ color: "var(--foreground)" }}>
           Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
         </span>
-      </a>
+      </Link>
 
       {/* Headline */}
       <div className="flex-1 flex flex-col justify-center max-w-md">
