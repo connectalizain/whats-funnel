@@ -84,7 +84,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
         scale: 1.02,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="p-6 rounded-2xl border flex flex-col gap-4"
+      className="p-6 rounded-2xl border flex flex-col items-center text-center sm:items-start sm:text-left gap-4"
       style={{
         backgroundColor: "var(--surface)",
         borderColor: "var(--border-color)",
@@ -137,7 +137,7 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 relative">
+    <section className="py-16 sm:py-24 relative">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

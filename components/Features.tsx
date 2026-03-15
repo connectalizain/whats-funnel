@@ -79,7 +79,7 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         scale: 1.03,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="group relative p-6 rounded-2xl border cursor-default"
+      className="group relative p-6 rounded-2xl border cursor-default flex flex-col items-center text-center sm:items-start sm:text-left"
       style={{
         backgroundColor: "var(--surface)",
         borderColor: "var(--border-color)",
@@ -118,7 +118,7 @@ export default function Features() {
   const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="features" className="py-24">
+    <section id="features" className="py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div

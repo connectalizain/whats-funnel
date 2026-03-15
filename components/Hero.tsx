@@ -253,7 +253,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-20 pb-12 sm:pt-24 sm:pb-16 overflow-hidden"
       style={{ backgroundColor: "var(--background)" }}
     >
       {/* --- Hero-scoped mouse glow (prominent) --- */}

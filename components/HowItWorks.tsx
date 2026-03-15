@@ -33,7 +33,7 @@ export default function HowItWorks() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="how-it-works" className="py-24 relative">
+    <section id="how-it-works" className="py-16 sm:py-24 relative">
       {/* Subtle section separator */}
       <div
         className="absolute inset-0 pointer-events-none"

@@ -9,14 +9,14 @@ export default function CTASection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-16 sm:py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden p-12 text-center"
+          className="relative rounded-3xl overflow-hidden p-8 sm:p-12 text-center"
           style={{
             backgroundColor: "var(--surface)",
             border: "1px solid rgba(34,197,94,0.2)",

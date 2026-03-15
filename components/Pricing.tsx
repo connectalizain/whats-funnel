@@ -89,7 +89,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         scale: 1.02,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="relative flex flex-col rounded-2xl border p-7"
+      className="relative flex flex-col items-center text-center sm:items-start sm:text-left rounded-2xl border p-7"
       style={{
         backgroundColor: plan.popular ? "var(--surface-2)" : "var(--surface)",
         borderColor: plan.popular ? "var(--brand)" : "var(--border-color)",
@@ -121,7 +121,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         </div>
       )}
 
-      <div className="mb-6">
+      <div className="mb-6 flex flex-col items-center sm:items-start">
         <div className="text-sm font-semibold mb-1" style={{ color: "var(--brand)" }}>
           {plan.name}
         </div>
@@ -138,9 +138,9 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         </p>
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1">
+      <ul className="space-y-3 mb-8 flex-1 w-full">
         {plan.features.map((f) => (
-          <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "var(--foreground-muted)" }}>
+          <li key={f} className="flex items-start justify-center sm:justify-start gap-2.5 text-sm" style={{ color: "var(--foreground-muted)" }}>
             <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brand)" }} />
             {f}
           </li>
@@ -187,7 +187,7 @@ export default function Pricing() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="pricing" className="py-24">
+    <section id="pricing" className="py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={ref}
