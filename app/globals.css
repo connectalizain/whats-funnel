@@ -141,3 +141,12 @@
 .animate-bounce-dot-3 {
   animation-delay: 300ms;
 }
+
+/* Utility to hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -205,6 +205,17 @@ export default function Hero() {
   // Animate chat messages sequentially with typing indicator before bot (right) messages
   const [visibleCount, setVisibleCount] = useState(0);
   const [showTyping, setShowTyping] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom when messages or typing state change
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        top: scrollRef.current.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+  }, [visibleCount, showTyping]);
 
   useEffect(() => {
     let timeouts: NodeJS.Timeout[] = [];
@@ -452,13 +463,13 @@ export default function Hero() {
                 <div className="rounded-[33px] overflow-hidden flex flex-col" style={{ backgroundColor: "#0d1b2a" }}>
 
                   {/* Status bar (notch area) */}
-                  <div className="flex justify-center pt-2.5 pb-1" style={{ backgroundColor: "#075e54" }}>
+                  <div className="flex justify-center pt-2.5 pb-1 flex-shrink-0" style={{ backgroundColor: "#075e54" }}>
                     <div className="w-16 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.3)" }} />
                   </div>
 
-                  {/* WhatsApp green chat header */}
+                  {/* WhatsApp green chat header - Fixed height to prevent jumps */}
                   <div
-                    className="flex items-center gap-3 px-4 py-3"
+                    className="flex items-center gap-3 px-4 h-[64px] flex-shrink-0"
                     style={{ backgroundColor: "#075e54" }}
                   >
                     {/* Avatar */}
@@ -481,9 +492,10 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Chat messages area — dark navy like WhatsApp dark mode */}
+                  {/* Chat messages area — fixed height with internal scroll to prevent layout shift */}
                   <div
-                    className="flex flex-col gap-2 px-3 py-3 min-h-[320px] relative overflow-hidden"
+                    ref={scrollRef}
+                    className="flex flex-col gap-2 px-3 py-4 h-[350px] relative overflow-y-auto scrollbar-hide"
                     style={{
                       backgroundColor: "#0d1b2a",
                       backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle cx='20' cy='20' r='10' stroke='%23ffffff' stroke-opacity='0.02' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -547,9 +559,9 @@ export default function Hero() {
                     </AnimatePresence>
                   </div>
 
-                  {/* Input bar */}
+                  {/* Input bar - Fixed height */}
                   <div
-                    className="flex items-center gap-2 px-3 py-2.5"
+                    className="flex items-center gap-2 px-3 h-[60px] flex-shrink-0"
                     style={{ backgroundColor: "#0d1b2a", borderTop: "1px solid rgba(255,255,255,0.06)" }}
                   >
                     <div
