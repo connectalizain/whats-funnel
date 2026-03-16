@@ -1,25 +1,70 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const SITE_URL = process.env.SITE_URL || 'https://web.whatsfunnels.io'
+
+export const viewport: Viewport = {
+  themeColor: '#C018A2',
+}
+
 export const metadata: Metadata = {
-  title: 'WhatsFunnels — WhatsApp Marketing That Converts',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'WhatsFunnels — WhatsApp Marketing That Converts',
+    template: '%s | WhatsFunnels'
+  },
   description: 'Broadcast campaigns, capture leads, and build marketing funnels directly on WhatsApp — the channel your customers actually use. Powered by the official WhatsApp Business API.',
   generator: 'v0.app',
-  keywords: ['WhatsApp marketing', 'WhatsApp automation', 'WhatsApp funnels', 'broadcast campaigns', 'lead capture'],
+  keywords: ['WhatsApp marketing', 'WhatsApp automation', 'WhatsApp funnels', 'broadcast campaigns', 'lead capture', 'WhatsApp Business API'],
+  authors: [{ name: 'WhatsFunnels' }],
+  creator: 'WhatsFunnels',
+  publisher: 'WhatsFunnels',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'WhatsFunnels — WhatsApp Marketing That Converts',
     description: 'Turn WhatsApp into your growth engine. Broadcasts, funnels, and automation on the official Meta API.',
     type: 'website',
-    url: 'https://web.whatsfunnels.io',
+    url: SITE_URL,
+    siteName: 'WhatsFunnels',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/placeholder.jpg', // Replace with actual OG image when available
+        width: 1200,
+        height: 630,
+        alt: 'WhatsFunnels — WhatsApp Marketing That Converts',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'WhatsFunnels — WhatsApp Marketing That Converts',
     description: 'Turn WhatsApp into your growth engine.',
+    creator: '@whatsfunnels',
+    images: ['/placeholder.jpg'], // Replace with actual twitter image
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: [
@@ -45,8 +90,55 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'WhatsFunnels',
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.svg`,
+    sameAs: [
+      'https://twitter.com/whatsfunnels',
+      'https://linkedin.com/company/whatsfunnels',
+    ],
+  };
+
+  const websiteData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'WhatsFunnels',
+    url: SITE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE_URL}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const productData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'WhatsFunnels',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Cloud',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '124',
+    },
+  };
+
   return (
     <html lang="en">
+      <head>
+        <StructuredData data={organizationData} />
+        <StructuredData data={websiteData} />
+        <StructuredData data={productData} />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />

@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /signin
+Disallow: /signup
+
+# Host
+Host: https://web.whatsfunnels.io
+
+# Sitemaps
+Sitemap: https://web.whatsfunnels.io/sitemap.xml
