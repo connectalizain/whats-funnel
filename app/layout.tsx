@@ -15,12 +15,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'WhatsFunnels — WhatsApp Marketing That Converts',
+    default: 'WhatsFunnels – AI Powered WhatsApp Funnels',
     template: '%s | WhatsFunnels'
   },
-  description: 'Broadcast campaigns, capture leads, and build marketing funnels directly on WhatsApp — the channel your customers actually use. Powered by the official WhatsApp Business API.',
+  description: 'Scale your business with AI-powered WhatsApp funnels. Broadcast campaigns, capture leads, and automate your marketing directly on the channel your customers actually use. Powered by the official WhatsApp Business API.',
   generator: 'v0.app',
-  keywords: ['WhatsApp marketing', 'WhatsApp automation', 'WhatsApp funnels', 'broadcast campaigns', 'lead capture', 'WhatsApp Business API'],
+  keywords: ['WhatsApp marketing', 'WhatsApp automation', 'WhatsApp funnels', 'broadcast campaigns', 'lead capture', 'WhatsApp Business API', 'AI marketing'],
   authors: [{ name: 'WhatsFunnels' }],
   creator: 'WhatsFunnels',
   publisher: 'WhatsFunnels',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'WhatsFunnels — WhatsApp Marketing That Converts',
-    description: 'Turn WhatsApp into your growth engine. Broadcasts, funnels, and automation on the official Meta API.',
+    title: 'WhatsFunnels – AI Powered WhatsApp Funnels',
+    description: 'Scale your business with AI-powered WhatsApp funnels. Broadcasts, lead capture, and automation on the official Meta API.',
     type: 'website',
     url: SITE_URL,
     siteName: 'WhatsFunnels',
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: '/placeholder.jpg', // Replace with actual OG image when available
         width: 1200,
         height: 630,
-        alt: 'WhatsFunnels — WhatsApp Marketing That Converts',
+        alt: 'WhatsFunnels – AI Powered WhatsApp Funnels',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WhatsFunnels — WhatsApp Marketing That Converts',
-    description: 'Turn WhatsApp into your growth engine.',
+    title: 'WhatsFunnels – AI Powered WhatsApp Funnels',
+    description: 'Scale your business with AI-powered WhatsApp funnels.',
     creator: '@whatsfunnels',
     images: ['/placeholder.jpg'], // Replace with actual twitter image
   },
