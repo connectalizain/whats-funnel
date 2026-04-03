@@ -2,29 +2,26 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Link2, Download, Rocket } from "lucide-react";
+import { Zap, Smartphone, CheckCircle } from "lucide-react";
 
-const steps = [
+const features = [
   {
-    number: "01",
-    icon: Link2,
-    title: "Connect Your Number",
+    icon: Smartphone,
+    title: "Use Your Number",
     description:
-      "Link your WhatsApp Business number to WhatsFunnels via the official Meta API. No technical skills required — we guide you every step of the way.",
+      "Keep your existing WhatsApp number or start fresh with a new one.",
   },
   {
-    number: "02",
-    icon: Download,
-    title: "Import or Capture Leads",
+    icon: Zap,
+    title: "Connect in <60s",
     description:
-      "Upload your contact list or deploy opt-in forms to grow your WhatsApp audience from your website and ads automatically.",
+      "Get connected to the official Meta Business API in under 60 seconds.",
   },
   {
-    number: "03",
-    icon: Rocket,
-    title: "Launch & Scale",
+    icon: CheckCircle,
+    title: "No Downtime",
     description:
-      "Create campaigns, send broadcasts, build funnels, and watch your revenue grow — all from one clean dashboard.",
+      "The switch is seamless, ensuring no migration headaches or downtime.",
   },
 ];
 
@@ -59,40 +56,30 @@ export default function HowItWorks() {
               borderColor: "rgba(34,197,94,0.25)",
             }}
           >
-            How It Works
+            Seamless Integration
           </span>
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-balance"
             style={{ color: "var(--foreground)" }}
           >
-            Up and running{" "}
-            <span style={{ color: "var(--brand)" }}>in under 5 minutes</span>
+            Connect Your WhatsApp{" "}
+            <span style={{ color: "var(--brand)" }}>in One Click</span>
           </h2>
           <p
-            className="mt-4 text-lg max-w-xl mx-auto leading-relaxed"
+            className="mt-4 text-lg max-w-2xl mx-auto leading-relaxed"
             style={{ color: "var(--foreground-muted)" }}
           >
-            From zero to sending your first broadcast in minutes — no technical skills needed.
+            Whether you want to use your existing WhatsApp number or start fresh with a new one, get connected to the official Meta Business API in under 60 seconds. No migration, no downtime.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Connecting line (desktop) */}
-          <div
-            className="hidden lg:block absolute top-12 left-[calc(16.66%+1.5rem)] right-[calc(16.66%+1.5rem)] h-px"
-            style={{
-              background:
-                "linear-gradient(90deg, transparent, var(--brand), transparent)",
-              opacity: 0.3,
-            }}
-          />
-
           <div className="grid lg:grid-cols-3 gap-8">
-            {steps.map((step, i) => {
-              const Icon = step.icon;
+            {features.map((feature, i) => {
+              const Icon = feature.icon;
               return (
                 <motion.div
-                  key={step.number}
+                  key={feature.title}
                   initial={{ opacity: 0, y: 40 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ 
@@ -105,7 +92,6 @@ export default function HowItWorks() {
                   whileHover={{ y: -6 }}
                   className="relative text-center group cursor-default"
                 >
-                  {/* Step number bubble */}
                   <div className="flex justify-center mb-6">
                     <motion.div 
                       className="relative"
@@ -122,33 +108,20 @@ export default function HowItWorks() {
                       >
                         <Icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" style={{ color: "var(--brand)" }} />
                       </div>
-                      <motion.span
-                        className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center"
-                        style={{ backgroundColor: "var(--brand)", color: "#000" }}
-                        whileHover={{ scale: 1.2 }}
-                      >
-                        {i + 1}
-                      </motion.span>
                     </motion.div>
                   </div>
 
-                  <div
-                    className="text-xs font-bold tracking-widest mb-2"
-                    style={{ color: "var(--brand)" }}
-                  >
-                    {step.number}
-                  </div>
                   <h3
                     className="text-lg font-bold mb-3"
                     style={{ color: "var(--foreground)" }}
                   >
-                    {step.title}
+                    {feature.title}
                   </h3>
                   <p
                     className="text-sm leading-relaxed max-w-xs mx-auto"
                     style={{ color: "var(--foreground-muted)" }}
                   >
-                    {step.description}
+                    {feature.description}
                   </p>
                 </motion.div>
               );

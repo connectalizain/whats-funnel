@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -36,13 +36,8 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--brand)" }}>
-            <MessageCircle className="w-4 h-4 text-black" />
-          </div>
-          <span className="font-bold text-lg tracking-tight" style={{ color: "var(--foreground)" }}>
-            Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <img src="/Whte svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Radio,
-  Target,
-  GitBranch,
   Users,
-  CheckSquare,
+  Bot,
+  Radio,
+  BrainCircuit,
+  Reply,
   BarChart2,
 } from "lucide-react";
 
@@ -20,40 +20,40 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: Radio,
-    title: "Bulk Broadcasts",
-    description:
-      "Send personalized messages to thousands of contacts at once. Segment by tags, behavior, or custom fields for laser-targeted campaigns.",
-  },
-  {
-    icon: Target,
-    title: "Lead Capture Opt-ins",
-    description:
-      "Embed opt-in widgets on websites and ads to grow your WhatsApp subscriber list automatically. GDPR-compliant by design.",
-  },
-  {
-    icon: GitBranch,
-    title: "Marketing Funnels",
-    description:
-      "Build multi-step WhatsApp funnels that nurture leads from first touch to paying customer — all automated.",
-  },
-  {
     icon: Users,
-    title: "Contact Management",
+    title: "Unified Team Inbox",
     description:
-      "Import, tag, and segment contacts. Track every interaction and build rich customer profiles without extra CRM software.",
+      "Manage all conversations from a single dashboard. Real-time collaboration, conversation assignment, and internal notes.",
   },
   {
-    icon: CheckSquare,
-    title: "Template Approval",
+    icon: Bot,
+    title: "Smart Chatbot Automation",
     description:
-      "Manage and submit WhatsApp message templates directly from WhatsFunnels. We handle the Meta approval process for you.",
+      "Build conversational workflows without code. Automated responses, info collection, and keyword routing.",
+  },
+  {
+    icon: Radio,
+    title: "Broadcast Campaigns",
+    description:
+      "Send targeted messages to thousands instantly. Approved templates, real-time tracking, and audience segmentation.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI-Powered Assistance",
+    description:
+      "Train AI on your business docs & FAQs for smart reply suggestions, powered by a custom Knowledge Base.",
+  },
+  {
+    icon: Reply,
+    title: "Instant Auto-Replies",
+    description:
+      "Provide 24/7 customer support with keyword-triggered responses for common queries like 'pricing', 'hours', or 'help'.",
   },
   {
     icon: BarChart2,
-    title: "Campaign Analytics",
+    title: "Comprehensive Analytics",
     description:
-      "Track open rates, clicks, replies, and conversions in real-time. Know exactly which messages drive revenue.",
+      "Get reports on response times, conversation volumes, and customer satisfaction to optimize your communication strategy.",
   },
 ];
 
@@ -136,21 +136,20 @@ export default function Features() {
               borderColor: "rgba(34,197,94,0.25)",
             }}
           >
-            Platform Features
+            Core Features
           </span>
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-balance"
             style={{ color: "var(--foreground)" }}
           >
-            Everything you need to{" "}
-            <span style={{ color: "var(--brand)" }}>market on WhatsApp</span>
+            A complete platform to{" "}
+            <span style={{ color: "var(--brand)" }}>scale your business</span>
           </h2>
           <p
             className="mt-4 text-lg max-w-2xl mx-auto leading-relaxed"
             style={{ color: "var(--foreground-muted)" }}
           >
-            WhatsFunnels is built on the official WhatsApp Business API — so your
-            messages always get delivered.
+            Manage customer conversations, automate responses, and grow your business with our all-in-one WhatsApp solution.
           </p>
         </motion.div>
 

@@ -69,19 +69,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
+        url: '/Icon svg.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/Icon svg.svg',
   },
 }
 
@@ -95,7 +87,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'WhatsFunnels',
     url: SITE_URL,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/Icon svg.svg`,
     sameAs: [
       'https://twitter.com/whatsfunnels',
       'https://linkedin.com/company/whatsfunnels',

@@ -1,21 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 
 const footerLinks = {
   Product: [
     { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "Team Inbox", href: "#features" },
+    { label: "Chatbots", href: "#features" },
+    { label: "Broadcasts", href: "#features" },
+  ],
+  Resources: [
+    { label: "Blog", href: "#" },
+    { label: "Contact", href: "#" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-  ],
-  Account: [
-    { label: "Sign In", href: "/signin" },
-    { label: "Sign Up", href: "/signup" },
   ],
 };
 
@@ -32,19 +32,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left shrink-0 max-w-xs">
-            <Link href="/" className="inline-flex items-center gap-2 mb-3">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "var(--brand)" }}
-              >
-                <MessageCircle className="w-4 h-4 text-black" />
-              </div>
-              <span className="font-bold text-lg" style={{ color: "var(--foreground)" }}>
-                Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
-              </span>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <img src="/Whte svg.svg" alt="GoRespond Logo" className="h-10 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
-              The most powerful WhatsApp marketing platform built on the official Meta Business API.
+              The complete platform to manage customer conversations, automate responses, and scale your business communication globally.
             </p>
           </div>
 
@@ -84,14 +76,14 @@ export default function Footer() {
           style={{ borderColor: "var(--border-color)" }}
         >
           <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
-            © {new Date().getFullYear()} WhatsFunnels. All rights reserved.
+            © {new Date().getFullYear()} GoRespond. All rights reserved. A product of Uptech Sol Technologies W.L.L.
           </p>
           <div className="flex items-center gap-2 text-xs" style={{ color: "var(--foreground-muted)" }}>
             <span
               className="w-1.5 h-1.5 rounded-full inline-block"
               style={{ backgroundColor: "var(--brand)" }}
             />
-            Official Meta WhatsApp Business API Partner
+            Official Meta WhatsApp Business API
           </div>
         </div>
       </div>

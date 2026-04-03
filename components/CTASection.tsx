@@ -49,16 +49,15 @@ export default function CTASection() {
               className="text-3xl sm:text-5xl font-extrabold text-balance mb-5"
               style={{ color: "var(--foreground)" }}
             >
-              Start your WhatsApp{" "}
-              <span style={{ color: "var(--brand)" }}>marketing today</span>
+              WhatsApp Business{" "}
+              <span style={{ color: "var(--brand)" }}>Made Simple</span>
             </h2>
 
             <p
               className="text-lg max-w-xl mx-auto leading-relaxed mb-10"
               style={{ color: "var(--foreground-muted)" }}
             >
-              Join 1,200+ businesses using WhatsFunnels to drive revenue through WhatsApp.
-              No credit card needed.
+              The complete platform to manage customer conversations, automate responses, and scale your business communication globally.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -77,7 +76,7 @@ export default function CTASection() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
-                Try Free for 14 Days
+                Create Free Account
                 <motion.span
                   className="inline-block"
                   whileHover={{ x: 4 }}
@@ -102,12 +101,12 @@ export default function CTASection() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
-                Book a Demo
+                Try Live Demo
               </motion.a>
             </div>
 
             <p className="mt-6 text-xs" style={{ color: "var(--foreground-muted)" }}>
-              No credit card required · Cancel anytime · Official WhatsApp API
+              Enterprise-grade security · Official WhatsApp Business API
             </p>
           </div>
         </motion.div>
