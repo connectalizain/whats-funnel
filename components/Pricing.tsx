@@ -16,55 +16,38 @@ interface Plan {
 
 const plans: Plan[] = [
   {
-    name: "Starter",
-    price: "$29",
-    period: "/mo",
-    description: "Perfect for solo marketers & small businesses getting started.",
+    name: "Pro",
+    price: "$20",
+    period: "/month",
+    description: "Professional plan for growing businesses",
     features: [
-      "Up to 1,000 contacts",
-      "5,000 messages/month",
-      "Bulk broadcast campaigns",
-      "Basic segmentation",
-      "2 message templates",
+      "All platform features",
+      "Unlimited conversations",
+      "Team collaboration",
+      "Advanced analytics",
+      "API access",
       "Email support",
     ],
-    cta: "Get Started",
+    cta: "Select Plan",
     popular: false,
-  },
-  {
-    name: "Growth",
-    price: "$49",
-    period: "/mo",
-    description: "For growing businesses ready to scale WhatsApp marketing.",
-    features: [
-      "Up to 5,000 contacts",
-      "25,000 messages/month",
-      "Advanced broadcast scheduling",
-      "Full audience segmentation",
-      "Unlimited templates",
-      "Marketing funnel builder",
-      "Lead capture widgets",
-      "Priority support",
-    ],
-    cta: "Get Started",
-    popular: true,
   },
   {
     name: "Enterprise",
-    price: "$97",
-    period: "/mo",
-    description: "Full-service setup & management. We do the heavy lifting.",
+    price: "$35",
+    period: "/month",
+    description: "Enterprise solution with premium support",
     features: [
-      "Everything in Growth",
-      "Unlimited contacts",
-      "API setup & onboarding",
-      "Custom funnel strategy",
-      "Campaign copywriting",
-      "Monthly strategy calls",
-      "Dedicated account manager",
+      "All platform features",
+      "Unlimited conversations",
+      "Team collaboration",
+      "Advanced analytics",
+      "API access",
+      "Dedicated WhatsApp support agent",
+      "Priority support",
+      "Custom integrations",
     ],
-    cta: "Talk to Us",
-    popular: false,
+    cta: "Select Plan",
+    popular: true,
   },
 ];
 
@@ -89,7 +72,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         scale: 1.02,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="relative flex flex-col items-center text-center sm:items-start sm:text-left rounded-2xl border p-7"
+      className="relative flex flex-col h-full w-full items-center text-center rounded-2xl border p-7"
       style={{
         backgroundColor: plan.popular ? "var(--surface-2)" : "var(--surface)",
         borderColor: plan.popular ? "var(--brand)" : "var(--border-color)",
@@ -121,11 +104,11 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         </div>
       )}
 
-      <div className="mb-6 flex flex-col items-center sm:items-start">
+      <div className="mb-6 flex flex-col items-center">
         <div className="text-sm font-semibold mb-1" style={{ color: "var(--brand)" }}>
           {plan.name}
         </div>
-        <div className="flex items-end gap-1 mb-2">
+        <div className="flex items-end justify-center gap-1 mb-2">
           <span className="text-4xl font-extrabold" style={{ color: "var(--foreground)" }}>
             {plan.price}
           </span>
@@ -140,7 +123,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
 
       <ul className="space-y-3 mb-8 flex-1 w-full">
         {plan.features.map((f) => (
-          <li key={f} className="flex items-start justify-center sm:justify-start gap-2.5 text-sm" style={{ color: "var(--foreground-muted)" }}>
+          <li key={f} className="flex items-start justify-center gap-2.5 text-sm" style={{ color: "var(--foreground-muted)" }}>
             <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brand)" }} />
             {f}
           </li>
@@ -218,7 +201,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
           {plans.map((plan, i) => (
             <PricingCard key={plan.name} plan={plan} index={i} />
           ))}
@@ -231,7 +214,7 @@ export default function Pricing() {
           className="text-center text-sm mt-8"
           style={{ color: "var(--foreground-muted)" }}
         >
-          All plans include a 14-day free trial. No credit card required.
+          All plans include a 7-day free trial. No credit card required.
         </motion.p>
       </div>
     </section>

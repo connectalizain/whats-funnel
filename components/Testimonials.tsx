@@ -84,7 +84,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
         scale: 1.02,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="p-6 rounded-2xl border flex flex-col items-center text-center sm:items-start sm:text-left gap-4"
+      className="p-6 rounded-2xl border flex flex-col items-center text-center gap-4"
       style={{
         backgroundColor: "var(--surface)",
         borderColor: "var(--border-color)",
@@ -112,7 +112,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       </p>
 
       {/* Author */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center justify-center gap-3">
         <div
           className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
           style={{ backgroundColor: "var(--brand-glow)", color: "var(--brand)", border: "1px solid rgba(34,197,94,0.3)" }}

@@ -8,7 +8,7 @@ import {
   Bot,
   Radio,
   BrainCircuit,
-  Reply,
+  ShoppingCart,
   BarChart2,
 } from "lucide-react";
 
@@ -44,10 +44,10 @@ const features: Feature[] = [
       "Train AI on your business docs & FAQs for smart reply suggestions, powered by a custom Knowledge Base.",
   },
   {
-    icon: Reply,
-    title: "Instant Auto-Replies",
+    icon: ShoppingCart,
+    title: "Shopify Sync",
     description:
-      "Provide 24/7 customer support with keyword-triggered responses for common queries like 'pricing', 'hours', or 'help'.",
+      "Real-time synchronization with your Shopify store for orders, inventory, and customer data.",
   },
   {
     icon: BarChart2,
@@ -79,7 +79,7 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         scale: 1.03,
         transition: { type: "spring", stiffness: 400, damping: 25 }
       }}
-      className="group relative p-6 rounded-2xl border cursor-default flex flex-col items-center text-center sm:items-start sm:text-left"
+      className="group relative p-6 rounded-2xl border cursor-default flex flex-col items-center text-center"
       style={{
         backgroundColor: "var(--surface)",
         borderColor: "var(--border-color)",

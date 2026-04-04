@@ -9,10 +9,9 @@ const stats = [
   { value: "98%", label: "Message Open Rate" },
   { value: "45%", label: "Avg. Click-Through" },
   { value: "2B+", label: "WhatsApp Users" },
-  { value: "1,200+", label: "Businesses Worldwide" },
 ];
 
-const trustedBadges = ["Official WhatsApp API", "GDPR Compliant", "No Credit Card"];
+const trustedBadges = ["Official WhatsApp API", "No Credit Card"];
 
 const chatMessages = [
   { side: "left",  text: "Hey! I saw your ad for the flash sale 👀", time: "10:31" },
@@ -191,7 +190,7 @@ function FloatingBadge({
       }}
     >
       <Icon className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "var(--brand)" }} />
-      <span className="text-xs font-medium whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+      <span className="text-xs font-medium whitespace-nowrap" style={{ color: "var(--brand)" }}>
         {label}
       </span>
     </motion.div>
@@ -266,7 +265,10 @@ export default function Hero() {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center pt-20 pb-12 sm:pt-24 sm:pb-16 overflow-hidden"
-      style={{ backgroundColor: "var(--background)" }}
+      style={{
+        background:
+          "linear-gradient(165deg, #d8ebe2 0%, #dce6ee 32%, #d4e4f0 68%, #e4ebf3 100%)",
+      }}
     >
       {/* --- Hero-scoped mouse glow (prominent) --- */}
       {glowActive && (
@@ -280,8 +282,8 @@ export default function Hero() {
             height: 900,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.10) 30%, rgba(34,197,94,0.03) 60%, transparent 75%)",
-            filter: "blur(48px)",
+              "radial-gradient(circle, rgba(34,197,94,0.42) 0%, rgba(34,197,94,0.2) 28%, rgba(16,185,129,0.12) 48%, rgba(56,189,248,0.08) 62%, transparent 78%)",
+            filter: "blur(44px)",
             willChange: "left, top",
             transition: "opacity 0.4s ease",
             opacity: 1,
@@ -292,24 +294,58 @@ export default function Hero() {
       {/* Global subtle follower for rest of page */}
       <GlowFollower />
 
+      {/* Mesh blobs — static depth */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div
+          className="absolute -top-[20%] left-[10%] w-[min(520px,90vw)] h-[min(520px,90vw)] rounded-full opacity-50"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(34,197,94,0.18) 0%, rgba(34,197,94,0.06) 45%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+        <div
+          className="absolute top-[35%] -right-[8%] w-[min(480px,85vw)] h-[min(480px,85vw)] rounded-full opacity-45"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(14,165,233,0.14) 0%, rgba(99,102,241,0.08) 40%, transparent 68%)",
+            filter: "blur(44px)",
+          }}
+        />
+        <div
+          className="absolute -bottom-[15%] left-[30%] w-[min(600px,100vw)] h-[min(360px,50vh)] rounded-full opacity-40"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(34,197,94,0.12) 0%, transparent 65%)",
+            filter: "blur(36px)",
+          }}
+        />
+      </div>
+
       {/* Static top glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -5%, rgba(34,197,94,0.1) 0%, transparent 65%)",
+            "radial-gradient(ellipse 90% 55% at 50% -8%, rgba(34,197,94,0.14) 0%, transparent 58%)",
         }}
       />
 
-      {/* Subtle grid */}
+      {/* Subtle grid — tuned for light surfaces */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.07]"
+        className="absolute inset-0 pointer-events-none opacity-[0.55]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
+            "linear-gradient(rgba(15,23,42,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.045) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage: "radial-gradient(ellipse 85% 70% at 50% 45%, black 15%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 85% 70% at 50% 45%, black 15%, transparent 75%)",
         }}
       />
+
+      {/* Fine grain */}
+      <div className="absolute inset-0 pointer-events-none section-noise opacity-70 mix-blend-overlay" aria-hidden="true" />
 
       <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -338,10 +374,9 @@ export default function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance"
               style={{ color: "var(--foreground)" }}
             >
-              Turn WhatsApp Into Your{" "}
-              <span style={{ color: "var(--brand)" }}>Growth Engine</span>
+              Where WhatsApp{" "}
+              <span style={{ color: "var(--brand)" }}>Meets Growth</span>
             </motion.h1>
-
             <motion.p
               variants={fadeUp}
               className="mt-6 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0"
@@ -380,13 +415,13 @@ export default function Hero() {
                   boxShadow: "0 4px 24px rgba(34,197,94,0.3)",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 32px rgba(34,197,94,0.55)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 44px 32px rgba(34,197,94,0.55)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(34,197,94,0.3)";
                 }}
               >
-                Start Free — 14 Days
+                Start Free — 7 Days
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
@@ -635,23 +670,20 @@ function GlowFollower() {
   if (!isVisible) return null;
 
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-0"
-      style={{ mixBlendMode: "screen" }}
-      aria-hidden="true"
-    >
+    <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
       <div
         style={{
           position: "absolute",
-          left: pos.x - 250,
-          top: pos.y - 250,
-          width: 500,
-          height: 500,
+          left: pos.x - 280,
+          top: pos.y - 280,
+          width: 560,
+          height: 560,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(34,197,94,0.06) 0%, rgba(34,197,94,0.02) 50%, transparent 75%)",
-          filter: "blur(30px)",
+            "radial-gradient(circle, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.1) 38%, rgba(5,150,105,0.06) 58%, transparent 76%)",
+          filter: "blur(36px)",
           willChange: "transform",
+          opacity: 0.95,
         }}
       />
     </div>

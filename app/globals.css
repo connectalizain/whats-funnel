@@ -4,42 +4,49 @@
 
 :root {
   /* WhatsFunnels Light Theme */
-  --background: #f8fafc; /* slate-50 */
-  --surface: #ffffff;
-  --surface-2: #f1f5f9; /* slate-100 */
-  --foreground: #1e293b; /* slate-800 */
-  --foreground-muted: #64748b; /* slate-500 */
+  --background: #eef2f7;
+  --surface: #f0f4f9;
+  --surface-2: #e8edf4;
+  --foreground: #1e293b;
+  --foreground-muted: #94a3b8;
   --brand: #22c55e;
   --brand-dark: #16a34a;
   --brand-glow: rgba(34, 197, 94, 0.15);
-  --border-color: rgba(0,0,0,0.08);
+  /* Navbar: WhatsApp-style deep teal (white logo + mint text) */
+  --navbar-border: rgb(167 243 208 / 22%);
+  --navbar-border-strong: rgb(52 211 153 / 28%);
+  --navbar-text: rgb(236 253 245 / 90%);
+  --navbar-text-hover: rgb(255 255 255);
+  --navbar-mobile-bg: rgb(3 48 43 / 97%);
+  --navbar-shadow: 0 4px 24px rgb(4 48 42 / 35%);
+  --border-color: rgba(0, 0, 0, 0.08);
 
   /* shadcn token overrides */
-  --card: #ffffff;
+  --card: #f0f4f9;
   --card-foreground: #1e293b;
-  --popover: #ffffff;
+  --popover: #f0f4f9;
   --popover-foreground: #1e293b;
   --primary: #22c55e;
-  --primary-foreground: #f8fafc; /* slate-50 */
-  --secondary: #f1f5f9; /* slate-100 */
+  --primary-foreground: #f8fafc;
+  --secondary: #e8edf4;
   --secondary-foreground: #1e293b;
-  --muted: #f1f5f9; /* slate-100 */
-  --muted-foreground: #64748b; /* slate-500 */
+  --muted: #e8edf4;
+  --muted-foreground: #64748b;
   --accent: #22c55e;
-  --accent-foreground: #f8fafc; /* slate-50 */
+  --accent-foreground: #1e293b;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: rgba(0,0,0,0.08);
-  --input: #e2e8f0; /* slate-200 */
+  --border: rgba(0, 0, 0, 0.08);
+  --input: #dde3ed;
   --ring: #22c55e;
   --radius: 0.75rem;
-  --sidebar: #ffffff;
+  --sidebar: #f0f4f9;
   --sidebar-foreground: #1e293b;
   --sidebar-primary: #22c55e;
-  --sidebar-primary-foreground: #f8fafc; /* slate-50 */
-  --sidebar-accent: #f1f5f9; /* slate-100 */
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #e8edf4;
   --sidebar-accent-foreground: #1e293b;
-  --sidebar-border: rgba(0,0,0,0.08);
+  --sidebar-border: rgba(0, 0, 0, 0.08);
   --sidebar-ring: #22c55e;
 }
 
@@ -146,4 +153,9 @@
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Soft mesh noise overlay for section depth (no extra assets) */
+.section-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
 }

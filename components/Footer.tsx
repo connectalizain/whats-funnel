@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer
       className="border-t pt-12 pb-6 sm:pt-16 sm:pb-8"
-      style={{ borderColor: "var(--border-color)", backgroundColor: "var(--surface)" }}
+      style={{ borderColor: "var(--border-color)", background: "linear-gradient(90deg, #ffffff 0%, #22c55e 100%)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
@@ -45,8 +45,13 @@ export default function Footer() {
             {Object.entries(footerLinks).map(([group, links]) => (
               <div key={group} className="flex flex-col items-center sm:items-start text-center sm:text-left min-w-[80px]">
                 <h4
-                  className="text-xs font-semibold uppercase tracking-widest mb-3"
-                  style={{ color: "var(--foreground)" }}
+                  className="mb-3 text-base font-bold uppercase tracking-widest text-white transition-colors duration-200"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--brand)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "";
+                  }}
                 >
                   {group}
                 </h4>
@@ -56,9 +61,9 @@ export default function Footer() {
                       <Link
                         href={link.href}
                         className="text-sm transition-colors duration-200"
-                        style={{ color: "var(--foreground-muted)" }}
+                        style={{ color: "#ffffff" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
                       >
                         {link.label}
                       </Link>
@@ -78,7 +83,7 @@ export default function Footer() {
           <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
             © {new Date().getFullYear()} GoRespond. All rights reserved. A product of Uptech Sol Technologies W.L.L.
           </p>
-          <div className="flex items-center gap-2 text-xs" style={{ color: "var(--foreground-muted)" }}>
+          <div className="flex items-center gap-2 text-xs" style={{ color: "#ffffff" }}>
             <span
               className="w-1.5 h-1.5 rounded-full inline-block"
               style={{ backgroundColor: "var(--brand)" }}

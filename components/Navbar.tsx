@@ -28,11 +28,19 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl border-b border-white/8 py-3"
-          : "py-5"
+        scrolled ? "py-3" : "py-5"
       }`}
-      style={{ backgroundColor: scrolled ? "rgba(10,15,30,0.9)" : "transparent" }}
+      style={{
+        background: scrolled
+          ? "linear-gradient(180deg, rgb(5 78 69 / 92%) 0%, rgb(4 56 50 / 94%) 100%)"
+          : "linear-gradient(180deg, rgb(8 108 95 / 78%) 0%, rgb(6 88 78 / 74%) 100%)",
+        backdropFilter: "blur(18px) saturate(1.15)",
+        WebkitBackdropFilter: "blur(18px) saturate(1.15)",
+        borderBottom: scrolled
+          ? "1px solid var(--navbar-border-strong)"
+          : "1px solid var(--navbar-border)",
+        boxShadow: scrolled ? "var(--navbar-shadow)" : "0 1px 0 rgb(255 255 255 / 6%) inset",
+      }}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -47,9 +55,9 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className="text-sm font-medium transition-colors duration-200 hover:opacity-100"
-              style={{ color: "var(--foreground-muted)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--foreground)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
+              style={{ color: "var(--navbar-text)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--navbar-text-hover)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--navbar-text)")}
             >
               {link.label}
             </Link>
@@ -61,25 +69,24 @@ export default function Navbar() {
           <Link
             href="/signin"
             className="text-sm font-medium transition-colors duration-200"
-            style={{ color: "var(--foreground-muted)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--foreground)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground-muted)")}
+            style={{ color: "var(--navbar-text)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#86efac")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--navbar-text)")}
           >
             Sign in
           </Link>
           <Link
             href="/signup"
-            className="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            className="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105"
             style={{
-              backgroundColor: "var(--brand)",
+              backgroundColor: "#22c55e",
               color: "#000",
-              boxShadow: "0 0 0 0 var(--brand-glow)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px var(--brand-glow)";
+              (e.currentTarget as HTMLElement).style.backgroundColor = "#16a34a";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              (e.currentTarget as HTMLElement).style.backgroundColor = "#22c55e";
             }}
           >
             Get Started Free
@@ -88,8 +95,8 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-lg"
-          style={{ color: "var(--foreground)" }}
+          className="md:hidden p-2 rounded-lg transition-colors duration-300"
+          style={{ color: "var(--navbar-text-hover)" }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -106,7 +113,10 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             className="md:hidden border-t overflow-hidden"
-            style={{ borderColor: "var(--border-color)", backgroundColor: "var(--surface)" }}
+            style={{
+              borderColor: "var(--navbar-border)",
+              background: "linear-gradient(180deg, rgb(4 58 52 / 98%) 0%, rgb(3 44 40 / 99%) 100%)",
+            }}
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -114,7 +124,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className="text-sm font-medium py-1"
-                  style={{ color: "var(--foreground-muted)" }}
+                  style={{ color: "var(--navbar-text)" }}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -123,15 +133,21 @@ export default function Navbar() {
               <Link
                 href="/signin"
                 className="text-sm font-medium py-1"
-                style={{ color: "var(--foreground-muted)" }}
+                style={{ color: "var(--navbar-text)" }}
                 onClick={() => setMobileOpen(false)}
               >
                 Sign in
               </Link>
               <Link
                 href="/signup"
-                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center"
-                style={{ backgroundColor: "var(--brand)", color: "#000" }}
+                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-colors duration-200"
+                style={{ backgroundColor: "#22c55e", color: "#000" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "#16a34a";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor = "#22c55e";
+                }}
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started Free
