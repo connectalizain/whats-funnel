@@ -20,7 +20,7 @@ export default function AuthPreview() {
           <MessageCircle className="w-5 h-5 text-black" />
         </div>
         <span className="font-bold text-xl" style={{ color: "var(--foreground)" }}>
-          Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
+          WhatsFunnels
         </span>
       </Link>
 
@@ -29,7 +29,7 @@ export default function AuthPreview() {
         <h1 className="text-3xl font-bold leading-tight mb-2" style={{ color: "var(--foreground)" }}>
           WhatsApp Business
         </h1>
-        <h2 className="text-3xl font-bold mb-6" style={{ color: "var(--brand)" }}>
+        <h2 className="text-3xl font-bold mb-6 bg-gradient-to-br from-emerald-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
           Made Simple
         </h2>
         <p className="text-base leading-relaxed mb-10" style={{ color: "var(--foreground-muted)" }}>
@@ -55,7 +55,7 @@ export default function AuthPreview() {
               </div>
               <div>
                 <div className="text-xs font-semibold" style={{ color: "var(--foreground)" }}>WhatsFunnels</div>
-                <div className="text-[10px]" style={{ color: "var(--brand)" }}>Online</div>
+                <div className="text-[10px] font-bold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Online</div>
               </div>
             </div>
             <div className="space-y-2">

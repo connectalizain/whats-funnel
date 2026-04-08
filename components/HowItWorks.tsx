@@ -28,7 +28,7 @@ const features = [
 const cardBaseShadow =
   "0 10px 40px rgba(15,23,42,0.06), 0 0 0 1px rgba(255,255,255,0.85) inset, 0 1px 0 rgba(255,255,255,0.95) inset";
 const cardHoverShadow =
-  "0 22px 56px rgba(15,23,42,0.1), 0 0 0 1px rgba(34,197,94,0.18), 0 0 0 1px rgba(255,255,255,0.9) inset";
+  "0 22px 56px rgba(16,185,129,0.1), 0 0 0 1px rgba(16,185,129,0.18), 0 0 0 1px rgba(255,255,255,0.9) inset";
 
 export default function HowItWorks() {
   const ref = useRef(null);
@@ -40,7 +40,7 @@ export default function HowItWorks() {
       className="relative py-16 sm:py-24 overflow-hidden"
       style={{
         background:
-          "linear-gradient(185deg, #FFFFFF 0%, #F9FAFB 32%, #ECFDF5 58%, #F9FAFB 82%, #FFFFFF 100%)",
+          "linear-gradient(185deg, #FFFFFF 0%, #FAFAFA 32%, #ECFDF5 58%, #FAFAFA 82%, #FFFFFF 100%)",
       }}
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -48,7 +48,7 @@ export default function HowItWorks() {
           className="absolute -top-[12%] right-[5%] w-[min(440px,75vw)] h-[min(440px,75vw)] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(34,197,94,0.14) 0%, rgba(34,197,94,0.04) 48%, transparent 72%)",
+              "radial-gradient(circle, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.04) 48%, transparent 72%)",
             filter: "blur(38px)",
           }}
         />
@@ -64,7 +64,7 @@ export default function HowItWorks() {
           className="absolute -bottom-[18%] left-1/2 -translate-x-1/2 w-[min(720px,100vw)] h-[min(280px,35vh)] rounded-full opacity-80"
           style={{
             background:
-              "radial-gradient(ellipse at center, rgba(34,197,94,0.1) 0%, transparent 68%)",
+              "radial-gradient(ellipse at center, rgba(16,185,129,0.08) 0%, transparent 68%)",
             filter: "blur(32px)",
           }}
         />
@@ -94,10 +94,10 @@ export default function HowItWorks() {
             className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm"
             style={{
               background:
-                "linear-gradient(135deg, rgba(34,197,94,0.14) 0%, rgba(255,255,255,0.92) 100%)",
+                "linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(255,255,255,0.92) 100%)",
               color: "var(--brand)",
-              borderColor: "rgba(34,197,94,0.22)",
-              boxShadow: "0 2px 12px rgba(34,197,94,0.08)",
+              borderColor: "rgba(16, 185, 129, 0.2)",
+              boxShadow: "0 2px 12px rgba(16, 185, 129, 0.08)",
             }}
           >
             Seamless Integration
@@ -107,11 +107,13 @@ export default function HowItWorks() {
             style={{ color: "var(--foreground)" }}
           >
             Connect Your WhatsApp{" "}
-            <span style={{ color: "var(--brand)" }}>in One Click</span>
+            <span className="bg-gradient-to-br from-emerald-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">
+              in One Click
+            </span>
           </h2>
           <p
             className="mt-4 text-lg max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "var(--foreground-muted)" }}
+            style={{ color: "var(--foreground)" }}
           >
             Whether you want to use your existing WhatsApp number or start fresh with a new one, get connected to the official Meta Business API in under 60 seconds. No migration, no downtime.
           </p>
@@ -123,7 +125,7 @@ export default function HowItWorks() {
             className="hidden lg:block absolute top-[5.5rem] left-[12%] right-[12%] h-px pointer-events-none"
             style={{
               background:
-                "linear-gradient(90deg, transparent 0%, rgba(34,197,94,0.2) 15%, rgba(14,165,233,0.15) 50%, rgba(34,197,94,0.2) 85%, transparent 100%)",
+                "linear-gradient(90deg, transparent 0%, rgba(16,185,129,0.15) 15%, rgba(20,184,166,0.1) 50%, rgba(16,185,129,0.15) 85%, transparent 100%)",
             }}
             aria-hidden="true"
           />
@@ -148,7 +150,7 @@ export default function HowItWorks() {
                     damping: 15,
                   }}
                   whileHover={{ y: -8, boxShadow: cardHoverShadow }}
-                  className="relative text-center group cursor-default rounded-3xl border p-8 sm:p-9 backdrop-blur-md transition-[border-color] duration-300 hover:border-[rgba(34,197,94,0.22)]"
+                  className="relative text-center group cursor-default rounded-3xl border p-8 sm:p-9 backdrop-blur-md transition-[border-color] duration-300 hover:border-[rgba(16,185,129,0.2)]"
                   style={{
                     background:
                       "linear-gradient(155deg, rgba(255,255,255,0.88) 0%, rgba(248,250,252,0.72) 45%, rgba(255,255,255,0.78) 100%)",
@@ -165,8 +167,8 @@ export default function HowItWorks() {
                         className="p-[1px] rounded-2xl"
                         style={{
                           background:
-                            "linear-gradient(135deg, rgba(34,197,94,0.45) 0%, rgba(14,165,233,0.28) 50%, rgba(34,197,94,0.25) 100%)",
-                          boxShadow: "0 8px 28px rgba(34,197,94,0.15)",
+                            "linear-gradient(135deg, rgba(16,185,129,0.3) 0%, rgba(20,184,166,0.2) 50%, rgba(16,185,129,0.2) 100%)",
+                          boxShadow: "0 8px 28px rgba(16,185,129,0.1)",
                         }}
                       >
                         <div
@@ -193,7 +195,7 @@ export default function HowItWorks() {
                   </h3>
                   <p
                     className="text-sm leading-relaxed max-w-xs mx-auto"
-                    style={{ color: "var(--foreground-muted)" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {feature.description}
                   </p>

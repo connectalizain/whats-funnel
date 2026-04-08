@@ -22,12 +22,10 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer
-      className="border-t pt-12 pb-6 sm:pt-16 sm:pb-8"
-      style={{ 
-        borderColor: "rgba(16,185,129,0.2)",
-        background: "linear-gradient(180deg, #065F46 0%, #064E3B 100%)" 
-      }}
+      className="relative text-white bg-gradient-to-br from-black via-[#064e3b] to-[#042f2e] border-t pt-12 pb-6 sm:pt-16 sm:pb-8"
+      style={{ borderColor: "transparent" }}
     >
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Top section: brand + links in one responsive row */}
@@ -38,8 +36,8 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center mb-4">
               <img src="/Whte svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
             </Link>
-            <p className="text-sm leading-relaxed" style={{ color: "#D1FAE5", opacity: 0.8 }}>
-              The complete platform to manage customer conversations, automate responses, and scale your business communication globally.
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+              Automate WhatsApp, grow faster, and deliver seamless customer experiences.
             </p>
           </div>
 
@@ -53,7 +51,7 @@ export default function Footer() {
                     e.currentTarget.style.color = "var(--brand)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "";
+                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)";
                   }}
                 >
                   {group}
@@ -64,9 +62,9 @@ export default function Footer() {
                       <Link
                         href={link.href}
                         className="text-sm transition-colors duration-200"
-                        style={{ color: "#ffffff" }}
+                        style={{ color: "rgba(255, 255, 255, 0.7)" }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand)")}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)")}
                       >
                         {link.label}
                       </Link>
@@ -83,8 +81,8 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 border-t text-center"
           style={{ borderColor: "rgba(255,255,255,0.1)" }}
         >
-          <p className="text-xs" style={{ color: "#D1FAE5", opacity: 0.8 }}>
-            © {new Date().getFullYear()} WhatsFunnels. All rights reserved. A product of Uptech Sol Technologies W.L.L.
+          <p className="text-xs" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+            © {new Date().getFullYear()} WhatsFunnels. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-xs" style={{ color: "#ffffff" }}>
             <span

@@ -47,7 +47,7 @@ export default function FAQ() {
       className="relative py-16 sm:py-24 overflow-hidden"
       style={{
         background:
-          "linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 35%, #ECFDF5 70%, #FFFFFF 100%)",
+          "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 35%, #ECFDF5 70%, #FFFFFF 100%)",
       }}
     >
       {/* Background decorations */}
@@ -56,7 +56,7 @@ export default function FAQ() {
           className="absolute top-[5%] -left-[10%] w-[min(420px,80vw)] h-[min(420px,80vw)] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(34,197,94,0.16) 0%, rgba(34,197,94,0.04) 50%, transparent 72%)",
+              "radial-gradient(circle, rgba(16,185,129,0.12) 0%, rgba(16,185,129,0.04) 50%, transparent 72%)",
             filter: "blur(36px)",
           }}
         />
@@ -89,10 +89,10 @@ export default function FAQ() {
             className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm"
             style={{
               background:
-                "linear-gradient(135deg, rgba(34,197,94,0.14) 0%, rgba(255,255,255,0.9) 100%)",
+                "linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(255,255,255,0.9) 100%)",
               color: "var(--brand)",
-              borderColor: "rgba(34,197,94,0.22)",
-              boxShadow: "0 2px 12px rgba(34,197,94,0.08)",
+              borderColor: "rgba(16, 185, 129, 0.2)",
+              boxShadow: "0 2px 12px rgba(16, 185, 129, 0.08)",
             }}
           >
             FAQ
@@ -103,7 +103,7 @@ export default function FAQ() {
           >
             Common questions
           </h2>
-          <p className="mt-4 text-base max-w-lg mx-auto" style={{ color: "var(--foreground-muted)" }}>
+          <p className="mt-4 text-base max-w-lg mx-auto" style={{ color: "var(--foreground)" }}>
             Everything you need to know before getting started.
           </p>
         </div>
@@ -124,14 +124,14 @@ export default function FAQ() {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="border-b border-[rgba(15,23,42,0.06)] last:border-b-0 rounded-2xl px-1 transition-colors duration-200 hover:bg-[rgba(34,197,94,0.03)] data-[state=open]:bg-[rgba(255,255,255,0.72)]"
+                className="border-b border-[rgba(15,23,42,0.06)] last:border-b-0 rounded-2xl px-1 transition-colors duration-200 hover:bg-[rgba(16,185,129,0.03)] data-[state=open]:bg-[rgba(255,255,255,0.72)]"
               >
                 <AccordionTrigger
                   className="text-sm font-semibold py-4 px-3 sm:py-5 sm:px-4 hover:no-underline data-[state=open]:text-[var(--brand)]"
                 >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-3 sm:px-4 text-sm leading-relaxed text-[var(--foreground-muted)]">
+                <AccordionContent className="px-3 sm:px-4 text-sm leading-relaxed text-[var(--foreground)]">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -54,7 +54,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-base font-semibold text-gray-900 hover:text-emerald-600 transition-colors duration-200"
+              className="text-base font-semibold text-foreground hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -65,15 +65,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="https://app.whatsfunnels.io/login"
-            className="px-4 py-2 rounded-lg border border-gray-200 text-base font-semibold text-gray-900 hover:border-emerald-600 hover:text-emerald-600 transition-all duration-200 hover:bg-emerald-50/50"
+            className="group relative flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm text-white overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
           >
-            Sign in
-          </Link>
-            <Link
-              href="https://app.whatsfunnels.io/login"
-              className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-md hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-105"
-            >
-            Get Started Free
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 group-hover:from-emerald-600 group-hover:to-teal-500 transition-all duration-300" />
+            <span className="relative flex items-center gap-2">
+              Launch App
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
           </Link>
         </div>
 
@@ -107,7 +105,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-base font-semibold text-gray-900 hover:text-emerald-600 py-2"
+                  className="text-base font-semibold text-foreground hover:text-emerald-600 py-2"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -115,17 +113,10 @@ export default function Navbar() {
               ))}
               <Link
                 href="https://app.whatsfunnels.io/login"
-                className="text-base font-semibold text-center text-gray-900 border border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-600 hover:bg-emerald-50/50 py-2 transition-all duration-200"
+                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-md transition-all duration-300"
                 onClick={() => setMobileOpen(false)}
               >
-                Sign in
-              </Link>
-              <Link
-                href="https://app.whatsfunnels.io/login"
-                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-md transition-all duration-300"
-                onClick={() => setMobileOpen(false)}
-              >
-                Get Started Free
+                Launch App
               </Link>
             </div>
           </motion.div>

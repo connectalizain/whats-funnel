@@ -77,14 +77,14 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         backgroundColor: plan.popular ? "var(--surface-2)" : "var(--surface)",
         borderColor: plan.popular ? "var(--brand)" : "var(--border-color)",
         boxShadow: plan.popular
-          ? "0 0 0 1px rgba(34,197,94,0.4), 0 24px 60px rgba(34,197,94,0.15), 0 0 60px rgba(34,197,94,0.08)"
+          ? "0 0 0 1px rgba(16, 185, 129, 0.2), 0 24px 60px rgba(16, 185, 129, 0.1), 0 0 60px rgba(16, 185, 129, 0.05)"
           : "none",
         transition: "box-shadow 0.3s ease, border-color 0.3s ease",
       }}
       onMouseEnter={(e) => {
         if (!plan.popular) {
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.4)";
-          (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 50px rgba(0,0,0,0.3), 0 0 40px rgba(34,197,94,0.08)";
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(16, 185, 129, 0.4)";
+          (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 50px rgba(0,0,0,0.1), 0 0 40px rgba(16, 185, 129, 0.05)";
         }
       }}
       onMouseLeave={(e) => {
@@ -97,7 +97,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
       {plan.popular && (
         <div
           className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold"
-          style={{ backgroundColor: "var(--brand)", color: "#000" }}
+          style={{ backgroundColor: "var(--brand)", color: "#fff" }}
         >
           <Zap className="w-3 h-3" />
           Most Popular
@@ -112,30 +112,32 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
           <span className="text-4xl font-extrabold" style={{ color: "var(--foreground)" }}>
             {plan.price}
           </span>
-          <span className="text-sm pb-1" style={{ color: "var(--foreground-muted)" }}>
+          <span className="text-sm pb-1 font-medium" style={{ color: "var(--foreground)" }}>
             {plan.period}
           </span>
         </div>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
+        <p className="text-sm leading-relaxed font-medium" style={{ color: "var(--foreground)" }}>
           {plan.description}
         </p>
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1 w-full">
-        {plan.features.map((f) => (
-          <li key={f} className="flex items-start justify-center gap-2.5 text-sm" style={{ color: "var(--foreground-muted)" }}>
-            <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brand)" }} />
-            {f}
-          </li>
-        ))}
-      </ul>
+      <div className="flex-1 w-full flex justify-center mb-8">
+        <ul className="space-y-3 inline-flex flex-col">
+          {plan.features.map((f) => (
+            <li key={f} className="flex items-start gap-3.5 text-sm font-medium" style={{ color: "var(--foreground)" }}>
+              <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brand)" }} />
+              <span className="text-left">{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <a
         href="https://app.whatsfunnels.io/login"
         className={`w-full py-3 rounded-xl text-sm font-semibold text-center transition-all duration-300 hover:scale-105 ${
           plan.popular
-            ? "text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-[0_4px_24px_rgba(34,197,94,0.35)]"
-            : "text-gray-900 border border-gray-200 bg-transparent hover:border-emerald-600 hover:text-emerald-600 hover:bg-emerald-50/50"
+            ? "text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-[0_4px_24px_rgba(16,185,129,0.35)]"
+            : "text-foreground border border-border bg-transparent hover:border-emerald-600 hover:text-emerald-600 hover:bg-emerald-50/50"
         }`}
       >
         {plan.cta}
@@ -163,7 +165,7 @@ export default function Pricing() {
             style={{
               backgroundColor: "var(--brand-glow)",
               color: "var(--brand)",
-              borderColor: "rgba(34,197,94,0.25)",
+              borderColor: "rgba(16, 185, 129, 0.2)",
             }}
           >
             Simple Pricing
@@ -173,9 +175,11 @@ export default function Pricing() {
             style={{ color: "var(--foreground)" }}
           >
             Start free.{" "}
-            <span style={{ color: "var(--brand)" }}>Scale as you grow.</span>
+            <span className="bg-gradient-to-br from-emerald-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">
+              Scale as you grow.
+            </span>
           </h2>
-          <p className="mt-4 text-base" style={{ color: "var(--foreground-muted)" }}>
+          <p className="mt-4 text-base font-semibold" style={{ color: "var(--foreground)" }}>
             No hidden fees. No per-message charges. Cancel anytime.
           </p>
         </motion.div>
@@ -190,8 +194,8 @@ export default function Pricing() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.5 }}
-          className="text-center text-sm mt-8"
-          style={{ color: "var(--foreground-muted)" }}
+          className="text-center text-sm mt-8 font-semibold"
+          style={{ color: "var(--foreground)" }}
         >
           All plans include a 14-day free trial. No credit card required.
         </motion.p>

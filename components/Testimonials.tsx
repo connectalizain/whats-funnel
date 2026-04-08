@@ -91,8 +91,8 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
         transition: "box-shadow 0.3s ease, border-color 0.3s ease",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.4)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 40px rgba(0,0,0,0.3), 0 0 30px rgba(34,197,94,0.08)";
+        (e.currentTarget as HTMLElement).style.borderColor = "rgba(16, 185, 129, 0.4)";
+        (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 40px rgba(0,0,0,0.1), 0 0 30px rgba(16,185,129,0.05)";
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.borderColor = "var(--border-color)";
@@ -107,7 +107,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       </div>
 
       {/* Quote */}
-      <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--foreground-muted)" }}>
+      <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--foreground)" }}>
         &ldquo;{testimonial.quote}&rdquo;
       </p>
 
@@ -115,7 +115,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       <div className="flex items-center justify-center gap-3">
         <div
           className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-          style={{ backgroundColor: "var(--brand-glow)", color: "var(--brand)", border: "1px solid rgba(34,197,94,0.3)" }}
+          style={{ backgroundColor: "var(--brand-glow)", color: "var(--brand)", border: "1px solid rgba(16, 185, 129, 0.2)" }}
         >
           {testimonial.avatar}
         </div>
@@ -123,7 +123,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
           <div className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
             {testimonial.name}
           </div>
-          <div className="text-xs" style={{ color: "var(--foreground-muted)" }}>
+          <div className="text-xs font-semibold" style={{ color: "var(--foreground)" }}>
             {testimonial.role}
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function Testimonials() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(34,197,94,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(16,185,129,0.04) 0%, transparent 70%)",
         }}
       />
       <div className="max-w-6xl mx-auto px-6">
@@ -158,7 +158,7 @@ export default function Testimonials() {
             style={{
               backgroundColor: "var(--brand-glow)",
               color: "var(--brand)",
-              borderColor: "rgba(34,197,94,0.25)",
+              borderColor: "rgba(16, 185, 129, 0.2)",
             }}
           >
             Testimonials
@@ -168,9 +168,11 @@ export default function Testimonials() {
             style={{ color: "var(--foreground)" }}
           >
             Loved by marketers{" "}
-            <span style={{ color: "var(--brand)" }}>around the world</span>
+            <span className="bg-gradient-to-br from-emerald-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">
+              around the world
+            </span>
           </h2>
-          <p className="mt-4 text-base" style={{ color: "var(--foreground-muted)" }}>
+          <p className="mt-4 text-base font-medium" style={{ color: "var(--foreground)" }}>
             Join 1,200+ businesses driving revenue with WhatsFunnels.
           </p>
         </motion.div>

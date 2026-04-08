@@ -86,9 +86,9 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         transition: "box-shadow 0.3s ease, border-color 0.3s ease",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.5)";
+        (e.currentTarget as HTMLElement).style.borderColor = "rgba(16, 185, 129, 0.4)";
         (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 0 0 1px rgba(34,197,94,0.2), 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(34,197,94,0.1)";
+          "0 0 0 1px rgba(16, 185, 129, 0.1), 0 20px 50px rgba(0,0,0,0.1), 0 0 40px rgba(16, 185, 129, 0.05)";
       }}
       onMouseLeave={(e) => {
         (e.currentTarget as HTMLElement).style.borderColor = "var(--border-color)";
@@ -97,16 +97,16 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
     >
       <motion.div
         className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-        style={{ backgroundColor: "var(--brand-glow)", border: "1px solid rgba(34,197,94,0.25)" }}
+        style={{ backgroundColor: "var(--brand-glow)", border: "1px solid rgba(16, 185, 129, 0.2)" }}
         whileHover={{ scale: 1.15, rotate: 5 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >
-        <Icon className="w-5 h-5" style={{ color: "var(--brand)" }} />
+        <Icon className="w-5 h-5" style={{ color: "#10B981" }} />
       </motion.div>
       <h3 className="text-base font-semibold mb-2" style={{ color: "var(--foreground)" }}>
         {feature.title}
       </h3>
-      <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
+      <p className="text-sm leading-relaxed" style={{ color: "var(--foreground)" }}>
         {feature.description}
       </p>
     </motion.div>
@@ -133,7 +133,7 @@ export default function Features() {
             style={{
               backgroundColor: "var(--brand-glow)",
               color: "var(--brand)",
-              borderColor: "rgba(34,197,94,0.25)",
+              borderColor: "rgba(16, 185, 129, 0.2)",
             }}
           >
             Core Features
@@ -143,11 +143,13 @@ export default function Features() {
             style={{ color: "var(--foreground)" }}
           >
             A complete platform to{" "}
-            <span style={{ color: "var(--brand)" }}>scale your business</span>
+            <span className="bg-gradient-to-br from-emerald-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">
+              scale your business
+            </span>
           </h2>
           <p
             className="mt-4 text-lg max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "var(--foreground-muted)" }}
+            style={{ color: "var(--foreground)" }}
           >
             Manage customer conversations, automate responses, and grow your business with our all-in-one WhatsApp solution.
           </p>

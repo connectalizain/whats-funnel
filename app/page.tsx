@@ -21,7 +21,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <FAQ />
-      <CTASection />
+      {/* <CTASection /> */}
       <Footer />
     </main>
   );
