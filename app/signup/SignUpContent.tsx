@@ -6,7 +6,7 @@ import { MessageCircle, Check } from "lucide-react";
 import AuthPreview from "@/components/AuthPreview";
 
 const benefits = [
-  "7-day free trial, no credit card required",
+  "14-day free trial, no credit card required",
   "Official WhatsApp Business API",
   "Unlimited team members",
   "24/7 priority support",

@@ -134,13 +134,8 @@ export default function TermsContent() {
       {/* Header */}
       <header className="border-b" style={{ borderColor: "var(--border-color)", backgroundColor: "var(--surface)" }}>
         <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "var(--brand)" }}>
-              <MessageCircle className="w-4 h-4 text-black" />
-            </div>
-            <span className="font-bold text-lg" style={{ color: "var(--foreground)" }}>
-              Whats<span style={{ color: "var(--brand)" }}>Funnels</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <img src="/Dark svg.svg" alt="WhatsFunnels Logo" className="h-8 w-auto" />
           </Link>
           <Link 
             href="/" 

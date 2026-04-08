@@ -17,7 +17,7 @@ interface Plan {
 const plans: Plan[] = [
   {
     name: "Pro",
-    price: "$20",
+    price: "$29",
     period: "/month",
     description: "Professional plan for growing businesses",
     features: [
@@ -33,7 +33,7 @@ const plans: Plan[] = [
   },
   {
     name: "Enterprise",
-    price: "$35",
+    price: "$49",
     period: "/month",
     description: "Enterprise solution with premium support",
     features: [
@@ -131,33 +131,12 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
       </ul>
 
       <a
-        href="#"
-        className="w-full py-3 rounded-xl text-sm font-semibold text-center transition-all duration-200 hover:scale-105"
-        style={
+        href="https://app.whatsfunnels.io/login"
+        className={`w-full py-3 rounded-xl text-sm font-semibold text-center transition-all duration-300 hover:scale-105 ${
           plan.popular
-            ? {
-                backgroundColor: "var(--brand)",
-                color: "#000",
-                boxShadow: "0 4px 20px rgba(34,197,94,0.35)",
-              }
-            : {
-                backgroundColor: "transparent",
-                color: "var(--foreground)",
-                border: "1px solid var(--border-color)",
-              }
-        }
-        onMouseEnter={(e) => {
-          if (!plan.popular) {
-            (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.4)";
-            (e.currentTarget as HTMLElement).style.color = "var(--brand)";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!plan.popular) {
-            (e.currentTarget as HTMLElement).style.borderColor = "var(--border-color)";
-            (e.currentTarget as HTMLElement).style.color = "var(--foreground)";
-          }
-        }}
+            ? "text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-[0_4px_24px_rgba(34,197,94,0.35)]"
+            : "text-gray-900 border border-gray-200 bg-transparent hover:border-emerald-600 hover:text-emerald-600 hover:bg-emerald-50/50"
+        }`}
       >
         {plan.cta}
       </a>
@@ -214,7 +193,7 @@ export default function Pricing() {
           className="text-center text-sm mt-8"
           style={{ color: "var(--foreground-muted)" }}
         >
-          All plans include a 7-day free trial. No credit card required.
+          All plans include a 14-day free trial. No credit card required.
         </motion.p>
       </div>
     </section>

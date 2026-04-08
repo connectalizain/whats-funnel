@@ -23,7 +23,10 @@ export default function Footer() {
   return (
     <footer
       className="border-t pt-12 pb-6 sm:pt-16 sm:pb-8"
-      style={{ borderColor: "var(--border-color)", background: "linear-gradient(90deg, #ffffff 0%, #22c55e 100%)" }}
+      style={{ 
+        borderColor: "rgba(16,185,129,0.2)",
+        background: "linear-gradient(180deg, #065F46 0%, #064E3B 100%)" 
+      }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
@@ -33,9 +36,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left shrink-0 max-w-xs">
             <Link href="/" className="inline-flex items-center mb-4">
-              <img src="/Whte svg.svg" alt="GoRespond Logo" className="h-10 w-auto" />
+              <img src="/Whte svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
             </Link>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "#D1FAE5", opacity: 0.8 }}>
               The complete platform to manage customer conversations, automate responses, and scale your business communication globally.
             </p>
           </div>
@@ -78,10 +81,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 border-t text-center"
-          style={{ borderColor: "var(--border-color)" }}
+          style={{ borderColor: "rgba(255,255,255,0.1)" }}
         >
-          <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
-            © {new Date().getFullYear()} GoRespond. All rights reserved. A product of Uptech Sol Technologies W.L.L.
+          <p className="text-xs" style={{ color: "#D1FAE5", opacity: 0.8 }}>
+            © {new Date().getFullYear()} WhatsFunnels. All rights reserved. A product of Uptech Sol Technologies W.L.L.
           </p>
           <div className="flex items-center gap-2 text-xs" style={{ color: "#ffffff" }}>
             <span

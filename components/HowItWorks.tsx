@@ -40,7 +40,7 @@ export default function HowItWorks() {
       className="relative py-16 sm:py-24 overflow-hidden"
       style={{
         background:
-          "linear-gradient(185deg, #f8fafc 0%, #f0fdf4 32%, #ecfdf5 58%, #e8f4fc 82%, #eef2f7 100%)",
+          "linear-gradient(185deg, #FFFFFF 0%, #F9FAFB 32%, #ECFDF5 58%, #F9FAFB 82%, #FFFFFF 100%)",
       }}
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">

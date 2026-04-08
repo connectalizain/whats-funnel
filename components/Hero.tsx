@@ -183,7 +183,7 @@ function FloatingBadge({
       transition={{ delay, duration: 0.4, ease: "easeOut" }}
       className={`absolute z-20 flex items-center gap-2 rounded-lg px-3 py-2 border ${className}`}
       style={{
-        backgroundColor: "rgba(15,23,42,0.9)",
+        backgroundColor: "rgba(255,255,255,0.9)",
         borderColor: "var(--border-color)",
         backdropFilter: "blur(8px)",
         boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
@@ -267,7 +267,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center pt-20 pb-12 sm:pt-24 sm:pb-16 overflow-hidden"
       style={{
         background:
-          "linear-gradient(165deg, #d8ebe2 0%, #dce6ee 32%, #d4e4f0 68%, #e4ebf3 100%)",
+          "linear-gradient(165deg, #FFFFFF 0%, #F9FAFB 32%, #ECFDF5 68%, #FFFFFF 100%)",
       }}
     >
       {/* --- Hero-scoped mouse glow (prominent) --- */}
@@ -282,7 +282,7 @@ export default function Hero() {
             height: 900,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(34,197,94,0.42) 0%, rgba(34,197,94,0.2) 28%, rgba(16,185,129,0.12) 48%, rgba(56,189,248,0.08) 62%, transparent 78%)",
+              "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(34,197,94,0.08) 28%, rgba(16,185,129,0.04) 48%, rgba(56,189,248,0.02) 62%, transparent 78%)",
             filter: "blur(44px)",
             willChange: "left, top",
             transition: "opacity 0.4s ease",
@@ -308,7 +308,7 @@ export default function Hero() {
           className="absolute top-[35%] -right-[8%] w-[min(480px,85vw)] h-[min(480px,85vw)] rounded-full opacity-45"
           style={{
             background:
-              "radial-gradient(circle, rgba(14,165,233,0.14) 0%, rgba(99,102,241,0.08) 40%, transparent 68%)",
+              "radial-gradient(circle, rgba(20,184,166,0.14) 0%, rgba(34,197,94,0.08) 40%, transparent 68%)",
             filter: "blur(44px)",
           }}
         />
@@ -333,10 +333,10 @@ export default function Hero() {
 
       {/* Subtle grid — tuned for light surfaces */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.55]"
+        className="absolute inset-0 pointer-events-none opacity-[0.3]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(15,23,42,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.045) 1px, transparent 1px)",
+            "linear-gradient(rgba(15,23,42,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
           maskImage: "radial-gradient(ellipse 85% 70% at 50% 45%, black 15%, transparent 75%)",
           WebkitMaskImage:
@@ -356,34 +356,42 @@ export default function Hero() {
             animate="visible"
             className="text-center lg:text-left"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 mb-6">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center gap-3 mt-4 mb-6 justify-center lg:justify-start w-full whitespace-nowrap overflow-visible">
               <span
-                className="px-3 py-1.5 rounded-full text-xs font-semibold border"
-                style={{
-                  backgroundColor: "var(--brand-glow)",
-                  color: "var(--brand)",
-                  borderColor: "rgba(34,197,94,0.3)",
-                }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] sm:text-[13px] font-medium border bg-white shadow-sm transition-transform hover:scale-105"
+                style={{ color: "#475569", borderColor: "#e2e8f0" }}
               >
-                ✦ Official WhatsApp Business API
+                <svg className="w-4 h-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.451-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.052 0C5.495 0 .16 5.333.158 11.892c0 2.098.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.332 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                Powered by Official WhatsApp Business API
+              </span>
+
+              <span
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] sm:text-[13px] font-medium border bg-white shadow-sm transition-transform hover:scale-105"
+                style={{ color: "#475569", borderColor: "#e2e8f0" }}
+              >
+                <svg className="w-5 h-5 text-[#0668E1]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 12c-2-2.5-4-3-6-3a4 4 0 0 0 0 8c2 0 4-.5 6-3 2 2.5 4 3 6 3a4 4 0 0 0 0-8c-2 0-4 .5-6 3Z" />
+                </svg>
+                Meta Business Partners
               </span>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance"
+              className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.1] tracking-tight w-full max-w-xl mx-auto lg:mx-0"
               style={{ color: "var(--foreground)" }}
             >
-              Where WhatsApp{" "}
-              <span style={{ color: "var(--brand)" }}>Meets Growth</span>
+              #1 Official WhatsApp{" "}
+              <span style={{ color: "var(--brand)" }}>Marketing Platform for Business</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="mt-6 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0"
               style={{ color: "var(--foreground-muted)" }}
             >
-              Broadcast campaigns, capture leads, and build marketing funnels directly on
-              WhatsApp — the channel with 98% open rates that your customers actually use.
+              Use the Official WhatsApp API and never get banned for sending bulk messages. WhatsFunnels offers the lowest cost with 0% markup fees on Meta API, unlike others who add 20-25%.
             </motion.p>
 
             <motion.div
@@ -407,21 +415,10 @@ export default function Hero() {
               className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start"
             >
               <Link
-                href="/signup"
-                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105"
-                style={{
-                  backgroundColor: "var(--brand)",
-                  color: "#000",
-                  boxShadow: "0 4px 24px rgba(34,197,94,0.3)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 44px 32px rgba(34,197,94,0.55)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(34,197,94,0.3)";
-                }}
+                href="https://app.whatsfunnels.io/login"
+                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:scale-105 shadow-[0_4px_24px_rgba(34,197,94,0.3)] hover:shadow-[0_24px_32px_rgba(34,197,94,0.5)]"
               >
-                Start Free — 7 Days
+                Start Free — 14 Days
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
@@ -680,7 +677,7 @@ function GlowFollower() {
           height: 560,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(34,197,94,0.22) 0%, rgba(34,197,94,0.1) 38%, rgba(5,150,105,0.06) 58%, transparent 76%)",
+            "radial-gradient(circle, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.04) 38%, rgba(5,150,105,0.02) 58%, transparent 76%)",
           filter: "blur(36px)",
           willChange: "transform",
           opacity: 0.95,

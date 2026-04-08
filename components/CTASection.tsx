@@ -18,9 +18,9 @@ export default function CTASection() {
           transition={{ duration: 0.7 }}
           className="relative rounded-3xl overflow-hidden p-8 sm:p-12 text-center"
           style={{
-            backgroundColor: "var(--surface)",
-            border: "1px solid rgba(34,197,94,0.2)",
-            boxShadow: "0 0 80px rgba(34,197,94,0.08), inset 0 0 60px rgba(34,197,94,0.03)",
+            background: "linear-gradient(180deg, #065F46 0%, #064E3B 100%)",
+            border: "1px solid #047857",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
           }}
         >
           {/* Background radial glow */}
@@ -36,9 +36,9 @@ export default function CTASection() {
             <div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 border"
               style={{
-                backgroundColor: "var(--brand-glow)",
-                color: "var(--brand)",
-                borderColor: "rgba(34,197,94,0.3)",
+                backgroundColor: "rgba(16, 185, 129, 0.15)",
+                color: "#6EE7B7",
+                borderColor: "rgba(16, 185, 129, 0.3)",
               }}
             >
               <MessageCircle className="w-3 h-3" />
@@ -47,26 +47,24 @@ export default function CTASection() {
 
             <h2
               className="text-3xl sm:text-5xl font-extrabold text-balance mb-5"
-              style={{ color: "var(--foreground)" }}
+              style={{ color: "#FFFFFF" }}
             >
               WhatsApp Business{" "}
-              <span style={{ color: "var(--brand)" }}>Made Simple</span>
+              <span style={{ color: "#34D399" }}>Made Simple</span>
             </h2>
 
             <p
               className="text-lg max-w-xl mx-auto leading-relaxed mb-10"
-              style={{ color: "var(--foreground-muted)" }}
+              style={{ color: "#D1FAE5" }}
             >
               The complete platform to manage customer conversations, automate responses, and scale your business communication globally.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a
-                href="/signup"
-                className="group flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm"
+                href="https://app.whatsfunnels.io/login"
+                className="group flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-emerald-500 to-teal-400 border border-transparent"
                 style={{
-                  backgroundColor: "var(--brand)",
-                  color: "#000",
                   boxShadow: "0 4px 24px rgba(34,197,94,0.35)",
                 }}
                 whileHover={{ 
@@ -89,14 +87,14 @@ export default function CTASection() {
                 href="#"
                 className="px-8 py-3.5 rounded-xl font-semibold text-sm border"
                 style={{
-                  borderColor: "var(--border-color)",
-                  color: "var(--foreground)",
-                  backgroundColor: "transparent",
+                  borderColor: "rgba(255,255,255,0.2)",
+                  color: "#FFFFFF",
+                  backgroundColor: "rgba(255,255,255,0.05)",
                 }}
                 whileHover={{ 
                   scale: 1.05,
-                  borderColor: "rgba(34,197,94,0.5)",
-                  backgroundColor: "var(--brand-glow)",
+                  borderColor: "rgba(255,255,255,0.4)",
+                  backgroundColor: "rgba(255,255,255,0.1)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -105,7 +103,7 @@ export default function CTASection() {
               </motion.a>
             </div>
 
-            <p className="mt-6 text-xs" style={{ color: "var(--foreground-muted)" }}>
+            <p className="mt-8 text-xs" style={{ color: "rgba(209,250,229,0.7)" }}>
               Enterprise-grade security · Official WhatsApp Business API
             </p>
           </div>

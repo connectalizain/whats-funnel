@@ -32,20 +32,20 @@ export default function Navbar() {
       }`}
       style={{
         background: scrolled
-          ? "linear-gradient(180deg, rgb(5 78 69 / 92%) 0%, rgb(4 56 50 / 94%) 100%)"
-          : "linear-gradient(180deg, rgb(8 108 95 / 78%) 0%, rgb(6 88 78 / 74%) 100%)",
+          ? "rgba(255, 255, 255, 0.95)"
+          : "transparent",
         backdropFilter: "blur(18px) saturate(1.15)",
         WebkitBackdropFilter: "blur(18px) saturate(1.15)",
         borderBottom: scrolled
           ? "1px solid var(--navbar-border-strong)"
           : "1px solid var(--navbar-border)",
-        boxShadow: scrolled ? "var(--navbar-shadow)" : "0 1px 0 rgb(255 255 255 / 6%) inset",
+        boxShadow: scrolled ? "var(--navbar-shadow)" : "none",
       }}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
-          <img src="/Whte svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
+          <img src="/Dark svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -54,10 +54,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium transition-colors duration-200 hover:opacity-100"
-              style={{ color: "var(--navbar-text)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--navbar-text-hover)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--navbar-text)")}
+              className="text-base font-semibold text-gray-900 hover:text-emerald-600 transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -67,28 +64,15 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="/signin"
-            className="text-sm font-medium transition-colors duration-200"
-            style={{ color: "var(--navbar-text)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#86efac")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--navbar-text)")}
+            href="https://app.whatsfunnels.io/login"
+            className="px-4 py-2 rounded-lg border border-gray-200 text-base font-semibold text-gray-900 hover:border-emerald-600 hover:text-emerald-600 transition-all duration-200 hover:bg-emerald-50/50"
           >
             Sign in
           </Link>
-          <Link
-            href="/signup"
-            className="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105"
-            style={{
-              backgroundColor: "#22c55e",
-              color: "#000",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "#16a34a";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundColor = "#22c55e";
-            }}
-          >
+            <Link
+              href="https://app.whatsfunnels.io/login"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-md hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-105"
+            >
             Get Started Free
           </Link>
         </div>
@@ -115,7 +99,7 @@ export default function Navbar() {
             className="md:hidden border-t overflow-hidden"
             style={{
               borderColor: "var(--navbar-border)",
-              background: "linear-gradient(180deg, rgb(4 58 52 / 98%) 0%, rgb(3 44 40 / 99%) 100%)",
+              background: "var(--navbar-mobile-bg)",
             }}
           >
             <div className="px-6 py-4 flex flex-col gap-4">
@@ -123,31 +107,22 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium py-1"
-                  style={{ color: "var(--navbar-text)" }}
+                  className="text-base font-semibold text-gray-900 hover:text-emerald-600 py-2"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                href="/signin"
-                className="text-sm font-medium py-1"
-                style={{ color: "var(--navbar-text)" }}
+                href="https://app.whatsfunnels.io/login"
+                className="text-base font-semibold text-center text-gray-900 border border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-600 hover:bg-emerald-50/50 py-2 transition-all duration-200"
                 onClick={() => setMobileOpen(false)}
               >
                 Sign in
               </Link>
               <Link
-                href="/signup"
-                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center transition-colors duration-200"
-                style={{ backgroundColor: "#22c55e", color: "#000" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "#16a34a";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.backgroundColor = "#22c55e";
-                }}
+                href="https://app.whatsfunnels.io/login"
+                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 shadow-md transition-all duration-300"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started Free
