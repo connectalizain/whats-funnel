@@ -8,7 +8,7 @@ Disallow: /signin
 Disallow: /signup
 
 # Host
-Host: https://web.whatsfunnels.io
+Host: https://whatsfunnels.io
 
 # Sitemaps
-Sitemap: https://web.whatsfunnels.io/sitemap.xml
+Sitemap: https://whatsfunnels.io/sitemap.xml

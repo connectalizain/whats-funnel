@@ -6,7 +6,7 @@ import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const SITE_URL = process.env.SITE_URL || 'https://web.whatsfunnels.io'
+const SITE_URL = process.env.SITE_URL || 'https://whatsfunnels.io'
 
 export const viewport: Viewport = {
   themeColor: '#C018A2',
@@ -69,11 +69,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/Icon svg.svg',
+        url: '/favicon.svg',
         type: 'image/svg+xml',
       },
+      {
+        url: '/favicon.png',
+        type: 'image/png',
+        sizes: '180x180',
+      },
     ],
-    apple: '/Icon svg.svg',
+    apple: '/favicon.png',
   },
 }
 
@@ -87,7 +92,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'WhatsFunnels',
     url: SITE_URL,
-    logo: `${SITE_URL}/Icon svg.svg`,
+    logo: `${SITE_URL}/favicon.svg`,
     sameAs: [
       'https://twitter.com/whatsfunnels',
       'https://linkedin.com/company/whatsfunnels',
