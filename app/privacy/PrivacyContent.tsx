@@ -95,7 +95,7 @@ export default function PrivacyContent() {
       <header className="border-b" style={{ borderColor: "var(--border-color)", backgroundColor: "var(--surface)" }}>
         <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center group">
-            <img src="/Dark svg.svg" alt="WhatsFunnels Logo" className="h-8 w-auto" />
+            <img src="/Black svg.svg" alt="WhatFlow Logo" className="h-8 w-auto" />
           </Link>
           <Link 
             href="/" 

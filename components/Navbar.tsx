@@ -17,6 +17,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    // Force scroll to top on mount/reload
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,7 +33,7 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ${
         scrolled ? "py-3" : "py-5"
       }`}
       style={{
@@ -62,14 +68,20 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="https://app.whatsfunnels.io/login"
+            className="text-base font-semibold text-foreground hover:text-emerald-600 transition-colors duration-200"
+          >
+            Sign In
+          </Link>
           <Link
             href="https://app.whatsfunnels.io/login"
             className="group relative flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm text-white overflow-hidden transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-400 group-hover:from-emerald-600 group-hover:to-teal-500 transition-all duration-300" />
             <span className="relative flex items-center gap-2">
-              Launch App
+              Sign Up
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
@@ -111,13 +123,22 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="https://app.whatsfunnels.io/login"
-                className="mt-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-md transition-all duration-300"
-                onClick={() => setMobileOpen(false)}
-              >
-                Launch App
-              </Link>
+              <div className="flex flex-col gap-3 mt-2">
+                <Link
+                  href="https://app.whatsfunnels.io/login"
+                  className="px-4 py-2.5 rounded-lg text-sm font-semibold text-center border border-emerald-500/20 text-emerald-700 bg-emerald-50/50"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="https://app.whatsfunnels.io/login"
+                  className="px-4 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-gradient-to-r from-emerald-500 to-teal-400 shadow-md"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Sign Up
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

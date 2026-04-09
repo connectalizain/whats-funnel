@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const SITE_URL = process.env.SITE_URL || 'https://whatsfunnels.io'
 
 export const viewport: Viewport = {
-  themeColor: '#C018A2',
+  themeColor: '#ffffff',
 }
 
 export const metadata: Metadata = {
