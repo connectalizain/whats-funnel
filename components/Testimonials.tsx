@@ -14,52 +14,52 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Rania K.",
-    role: "eCommerce Store Owner",
-    avatar: "R",
-    quote:
-      "WhatsFunnels completely changed how we do promotions. Our last broadcast hit a 94% open rate and drove $8k in sales in 2 hours. No other channel comes close.",
-    stars: 5,
-  },
-  {
-    name: "Marcus T.",
-    role: "Digital Marketing Agency",
-    avatar: "M",
-    quote:
-      "The funnel builder is incredible. We capture leads from our Facebook ads directly into WhatsApp and have a full nurture sequence running on autopilot. Game changer.",
-    stars: 5,
-  },
-  {
-    name: "Sofia A.",
-    role: "Online Coach",
+    name: "Strive Fitness Club",
+    role: "Gym",
     avatar: "S",
     quote:
-      "We switched from email to WhatsApp broadcasts and our conversion rate tripled. WhatsFunnels made the whole setup so easy — we were live in 15 minutes.",
+      "Using WhatsFunnels at Strive Fitness Club, we saw about a 3x increase in WhatsApp leads and around 40% more memberships within the first month. It’s simple to use and saves our team hours every day.",
     stars: 5,
   },
   {
-    name: "James L.",
-    role: "SaaS Founder",
-    avatar: "J",
+    name: "Doha Gossip",
+    role: "Event Company",
+    avatar: "D",
     quote:
-      "The contact segmentation is next level. We send hyper-targeted messages and see real engagement. The official API access means zero risk to our account.",
+      "After using WhatsFunnels at DohaGossip, our event ticket sales increased noticeably through WhatsApp campaigns. We’re getting more inquiries, better responses, and converting more people into actual attendees without extra manual work",
+    stars: 4.5,
+  },
+  {
+    name: "Horizon Heights",
+    role: "Real Estate",
+    avatar: "H",
+    quote:
+      "At Al Noor Estates Dubai, using WhatsFunnels helped us turn property inquiries into real viewings. Our campaign responses improved, and we saw around a 30% increase in qualified leads within the first few weeks, all while saving hours of manual follow-ups",
     stars: 5,
   },
   {
-    name: "Priya M.",
-    role: "Head of Growth, Retail Brand",
-    avatar: "P",
+    name: "Urban Bite",
+    role: "Restaurant",
+    avatar: "U",
     quote:
-      "Setup took under 10 minutes and the results were immediate. WhatsApp open rates are insane compared to email. This is now our #1 marketing channel.",
+      "WhatsFunnels helped us turn WhatsApp messages into actual table bookings. Our campaign responses picked up fast and we saw around a 25% increase in reservations within a few weeks",
     stars: 5,
   },
   {
-    name: "Alex B.",
-    role: "Lead Generation Consultant",
-    avatar: "A",
+    name: "Glow Lounge Salon",
+    role: "Salon & Spa",
+    avatar: "G",
     quote:
-      "The opt-in widgets are seamlessly integrated with our ad funnels. Leads flow straight into WhatsApp sequences automatically. ROI is through the roof.",
+      "WhatsFunnels made booking appointments so much easier. We saw nearly a 40% increase in bookings from WhatsApp campaigns and saved hours every day managing clients",
     stars: 5,
+  },
+  {
+    name: "NovaTrend Store",
+    role: "E-commerce Brand",
+    avatar: "N",
+    quote:
+      "We boosted our campaign conversions and brought in about 2x more inquiries on WhatsApp with WhatsFunnels. We’re closing more orders now without needing to manually reply to everyone.",
+    stars: 4.5,
   },
 ];
 
@@ -101,9 +101,20 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
     >
       {/* Stars */}
       <div className="flex gap-0.5">
-        {Array.from({ length: testimonial.stars }).map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-current" style={{ color: "var(--brand)" }} />
-        ))}
+        {Array.from({ length: Math.ceil(testimonial.stars) }).map((_, i) => {
+          const isFull = i + 1 <= testimonial.stars;
+          if (isFull) {
+            return <Star key={i} className="w-4 h-4 fill-current" style={{ color: "var(--brand)" }} />;
+          }
+          return (
+            <div key={i} className="relative">
+              <Star className="w-4 h-4" style={{ color: "var(--brand)" }} />
+              <div className="absolute inset-0 overflow-hidden w-[50%]">
+                <Star className="w-4 h-4 fill-current" style={{ color: "var(--brand)" }} />
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Quote */}
@@ -173,7 +184,7 @@ export default function Testimonials() {
             </span>
           </h2>
           <p className="mt-4 text-base font-medium" style={{ color: "var(--foreground)" }}>
-            Join 1,200+ businesses driving revenue with WhatsFunnels.
+            Join forward-thinking brands driving real growth with WhatsFunnels.
           </p>
         </motion.div>
 

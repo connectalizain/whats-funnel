@@ -29,9 +29,9 @@ const faqs = [
       "Absolutely. There are no long-term contracts. You can cancel your subscription from your account settings at any time with no penalties or hidden fees.",
   },
   {
-    question: "What's the difference between the Growth and Enterprise plans?",
+    question: "What’s the difference between the Pro and Enterprise plans?",
     answer:
-      "The Growth plan gives you all the tools to run WhatsApp marketing yourself. The Enterprise plan includes our team handling your API setup, funnel strategy, campaign copywriting, and monthly strategy calls — ideal for businesses who want results without doing the work themselves.",
+      "The Pro plan is great if you want to manage everything yourself, with access to all features, unlimited conversations, team collaboration, analytics, and API access. The Enterprise plan includes everything in Pro, but also gives you a dedicated WhatsApp support agent, faster priority support, and custom integrations, making it ideal if you need more hands on support and flexibility as you scale.",
   },
   {
     question: "How long does it take to get started?",
