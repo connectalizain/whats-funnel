@@ -36,9 +36,45 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center mb-4">
               <img src="/Whte svg.svg" alt="WhatsFunnels Logo" className="h-10 w-auto" />
             </Link>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
               Automate WhatsApp, grow faster, and deliver seamless customer experiences.
             </p>
+
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+                  Powered by
+                </span>
+                <a 
+                  href="https://konversation.io/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block transition-opacity hover:opacity-100"
+                >
+                  <img 
+                    src="/konversation_logo.svg" 
+                    alt="Konversation" 
+                    className="h-7 w-auto opacity-80 cursor-pointer" 
+                  />
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+                  Partnership with
+                </span>
+                <div className="flex items-center gap-1.5 opacity-90">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white/20">
+                    <rect width="40" height="40" rx="12" fill="currentColor"></rect>
+                    <path d="M10 14C10 11.2386 12.2386 9 15 9H25C27.7614 9 30 11.2386 30 14V22C30 24.7614 27.7614 27 25 27H17L12 32V27H15C12.2386 27 10 24.7614 10 22V14Z" fill="white" fillOpacity="0.95"></path>
+                    <circle cx="15" cy="18" r="2" fill="currentColor"></circle>
+                    <circle cx="20" cy="18" r="2" fill="currentColor"></circle>
+                    <circle cx="25" cy="18" r="2" fill="currentColor"></circle>
+                  </svg>
+                  <span className="text-white font-semibold tracking-wide text-sm">GoRespond</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Link columns: single row on all screen sizes */}
